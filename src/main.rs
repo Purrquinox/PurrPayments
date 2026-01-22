@@ -26,11 +26,6 @@ async fn main() -> std::io::Result<()> {
 
     HttpServer::new(|| {
         App::new()
-            .service(handlers::users::get_users)
-            .service(handlers::users::get_user)
-            .service(handlers::users::create_user)
-            .service(handlers::products::get_products)
-            .service(handlers::products::get_product)
             .service(handlers::health::health_check)
             .service(
                 SwaggerUi::new("/swagger-ui/{_:.*}")
